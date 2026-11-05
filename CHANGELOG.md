@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Docs: `README.md` is now English only (AT-745).
+
 - `politica.yml` novo: `pr-police` e `escada` do `brabo-ci` pinados por SHA (AT-733); inclui a dispensa da PR do bot (ADR 0255).
 - README: "Como subir o dev" aponta para o `make dev` do `brabo-infra`, e a tabela descreve o `brabo` como porta de entrada (AT-734).
 - `tag.yml` carimba as tags pelo `brabo-ci` (1ª = `v1.0.0`).
