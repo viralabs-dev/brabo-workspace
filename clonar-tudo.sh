@@ -24,4 +24,4 @@ for repo in $REPOS; do
   fi
 done
 
-echo "pronto: $(echo $REPOS | wc -w | tr -d ' ') repositórios em $PASTA"
+echo "pronto: $(echo "$REPOS" | wc -w | tr -d ' ') repositórios em $PASTA"
