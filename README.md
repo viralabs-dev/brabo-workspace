@@ -6,7 +6,7 @@ O Brabo foi separado do monorepo `brabo` em repositórios por camada (ADR 0252).
 
 | Repositório | O que é |
 |---|---|
-| `brabo` | o produto como era no monorepo, até a separação terminar |
+| `brabo` | porta de entrada do produto: documentação, `install.sh` e release do produto |
 | `brabo-api` | API NestJS (domínio, banco, auth) |
 | `brabo-engine` | engine Elixir/OTP (agentes, sessões, filas) |
 | `brabo-web` | interface React |
@@ -14,7 +14,7 @@ O Brabo foi separado do monorepo `brabo` em repositórios por camada (ADR 0252).
 | `brabo-broker` | único processo com o socket do Docker |
 | `brabo-contracts` | contratos compartilhados (`v1.0.0`) |
 | `brabo-ci` | workflows reutilizáveis e scripts da política de PR |
-| `brabo-infra` | compose e manifests para subir o ambiente de dev (chega na AT-701) |
+| `brabo-infra` | composes (dev, produção, instalação), Kubernetes e o `make dev` que sobe tudo a partir dos clones irmãos |
 | `brabo-qa` | testes de ponta a ponta e de propriedades |
 | `brabo-old` | o histórico do monorepo, só para consulta |
 
@@ -32,7 +32,14 @@ O `clonar-tudo.sh` clona por HTTPS cada `brabo-*` que ainda não existe na pasta
 
 ## Como subir o dev
 
-Ainda não está disponível aqui: quem sobe o ambiente de dev é o `brabo-infra`, que chega na AT-701. Até lá, cada repo roda o próprio dev conforme o README dele.
+Depois do `./clonar-tudo.sh`, quem sobe o ambiente de dev é o `brabo-infra`, construindo cada serviço a partir dos clones irmãos desta pasta:
+
+```bash
+cd brabo-infra
+make dev
+```
+
+O `make dev` confere que os irmãos estão no lugar e sobe o compose. Para outra pasta-mãe, use `BRABO_IRMAOS` (ver o README do `brabo-infra`).
 
 ## Testes
 
