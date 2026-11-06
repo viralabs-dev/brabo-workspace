@@ -2,7 +2,7 @@
 
 ## Unreleased
 
-- Docs: `README.md` is now English only (AT-745).
+- Docs: o `README.md` volta ao pt-BR, padrão da documentação de repo público (decisão do dono de 06/11/2026, revertendo o ADR 0260), com a tabela "Repositórios do Brabo" (links, "depende de" e "é usado por") e o link do site; o `brabo-old` aparece como monorepo antigo, arquivado (`brabo-legacy`). O `CLAUDE.md` ganha a regra de doc em pt-BR (AT-766).
 
 - `politica.yml` novo: `pr-police` e `escada` do `brabo-ci` pinados por SHA (AT-733); inclui a dispensa da PR do bot (ADR 0255).
 - README: "Como subir o dev" aponta para o `make dev` do `brabo-infra`, e a tabela descreve o `brabo` como porta de entrada (AT-734).
