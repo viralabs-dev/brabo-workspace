@@ -17,7 +17,7 @@ Este repositório não tem código do produto. Ele é a pasta `~/dev/brabo/`, on
 | `brabo-qa` | E2E de navegador (Playwright), golden-sets, roteiro TP-01 | `brabo-qa/CLAUDE.md` |
 | `brabo-workspace` | esta pasta-mãe: `clonar-tudo.sh` e este arquivo | este arquivo |
 
-O histórico do monorepo antigo, arquivado ([`viralabs-dev/brabo-legacy`](https://github.com/viralabs-dev/brabo-legacy), clone local `brabo-old`), é só consulta. O detalhe de regra por repo fica no `CLAUDE.md` de cada um: não copie regra para cá.
+O histórico do monorepo antigo, arquivado ([`viralabs-dev/brabo-legacy`](https://github.com/viralabs-dev/brabo-legacy), clone local `brabo-old`, que o `clonar-tudo.sh` clona de `brabo-legacy`), é só consulta. O detalhe de regra por repo fica no `CLAUDE.md` de cada um: não copie regra para cá.
 
 ## Regras TRANSVERSAIS (valem em todo repo)
 - **Gitflow e escada.** Branches permanentes: `dev` e `main` (a esteira é `dev → main`); trabalho nasce de `dev` com a taxonomia `breaking/`, `feature/`, `bugfix/`, `perf/`, `refactor/`, `chore/`, `docs/`, `test/` (`hotfix/` nasce de `main`), formato `funcao/descritivo` (`^.{0,30}/\S{0,32}$`). A FUNÇÃO decide a versão: `breaking/` sobe MAJOR, `feature/` MINOR, o resto PATCH. Toda mudança entra por PR; push direto em permanente é bloqueado. A escada de aprovação e a promoção vêm dos workflows reutilizáveis do `brabo-ci`.

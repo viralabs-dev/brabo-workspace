@@ -20,7 +20,7 @@ O Brabo é dividido em repositórios por camada (ADR 0252), e o [brabo](https://
 | [brabo-qa](https://github.com/viralabs-dev/brabo-qa) | testes de ponta a ponta (E2E), golden-sets e de propriedades | ci, api, engine, broker, infra | brabo |
 | [brabo-workspace](https://github.com/viralabs-dev/brabo-workspace) | esta pasta-mãe: `clonar-tudo.sh` e o `CLAUDE.md` transversal | ci | — |
 
-O clone local `brabo-old` é o monorepo antigo, arquivado: o remoto `daneiel/brabo` hoje é o [`viralabs-dev/brabo-legacy`](https://github.com/viralabs-dev/brabo-legacy), só para consulta.
+O clone local `brabo-old` é o monorepo antigo, arquivado: o remoto `daneiel/brabo` hoje é o [`viralabs-dev/brabo-legacy`](https://github.com/viralabs-dev/brabo-legacy), só para consulta; o `clonar-tudo.sh` o clona de lá na pasta `brabo-old`.
 
 ## Como clonar
 
