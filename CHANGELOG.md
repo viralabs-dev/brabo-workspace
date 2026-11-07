@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Ko-fi do mantenedor: `.github/FUNDING.yml` (botão Sponsor) e seção Apoie no README (AT-768).
+
 - Docs: o `README.md` volta ao pt-BR, padrão da documentação de repo público (decisão do dono de 06/11/2026, revertendo o ADR 0260), com a tabela "Repositórios do Brabo" (links, "depende de" e "é usado por") e o link do site; o `brabo-old` aparece como monorepo antigo, arquivado (`brabo-legacy`). O `CLAUDE.md` ganha a regra de doc em pt-BR (AT-766).
 
 - `politica.yml` novo: `pr-police` e `escada` do `brabo-ci` pinados por SHA (AT-733); inclui a dispensa da PR do bot (ADR 0255).
