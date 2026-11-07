@@ -17,7 +17,7 @@ Este repositório não tem código do produto. Ele é a pasta `~/dev/brabo/`, on
 | `brabo-qa` | E2E de navegador (Playwright), golden-sets, roteiro TP-01 | `brabo-qa/CLAUDE.md` |
 | `brabo-workspace` | esta pasta-mãe: `clonar-tudo.sh` e este arquivo | este arquivo |
 
-O histórico do monorepo (`daneiel/brabo`, remoto `brabo-legacy`, clone local `brabo-old`) é só consulta. O detalhe de regra por repo fica no `CLAUDE.md` de cada um: não copie regra para cá.
+O histórico do monorepo antigo, arquivado ([`viralabs-dev/brabo-legacy`](https://github.com/viralabs-dev/brabo-legacy), clone local `brabo-old`, que o `clonar-tudo.sh` clona de `brabo-legacy`), é só consulta. O detalhe de regra por repo fica no `CLAUDE.md` de cada um: não copie regra para cá.
 
 ## Regras TRANSVERSAIS (valem em todo repo)
 - **Gitflow e escada.** Branches permanentes: `dev` e `main` (a esteira é `dev → main`); trabalho nasce de `dev` com a taxonomia `breaking/`, `feature/`, `bugfix/`, `perf/`, `refactor/`, `chore/`, `docs/`, `test/` (`hotfix/` nasce de `main`), formato `funcao/descritivo` (`^.{0,30}/\S{0,32}$`). A FUNÇÃO decide a versão: `breaking/` sobe MAJOR, `feature/` MINOR, o resto PATCH. Toda mudança entra por PR; push direto em permanente é bloqueado. A escada de aprovação e a promoção vêm dos workflows reutilizáveis do `brabo-ci`.
@@ -25,6 +25,7 @@ O histórico do monorepo (`daneiel/brabo`, remoto `brabo-legacy`, clone local `b
 - **Merge na `main` é do dono.** Merge em branch protegida nunca é automatizado. Tag só por workflow, nunca à mão.
 - **Teste nunca no Postgres da instalação.** Use Postgres descartável (projeto compose `-p <nome>`); o dev é `brabo-dev` e a instalação é `brabo`, e um não toca o outro.
 - **Segredos nunca são impressos** (chave de LLM, token de git, `.env`), nem em log, PR ou relatório.
+- **Documentação em pt-BR.** Toda doc de repositório público (README, CONTRIBUTING, arquivos de comunidade, `docs/`, CHANGELOG) é escrita em pt-BR por padrão (decisão do dono de 06/11/2026, revertendo o ADR 0260). O site central é <https://viralabs-dev.github.io/brabo/prd/>.
 - **Documentação é parte do pronto.** Cada repo de código tem `docs/` própria, atualizada na mesma mudança, com `CHANGELOG.md` (Unreleased); o `brabo` agrega o site. Contrato entre repos só por TAG do `brabo-contracts`.
 - **Contas GitHub.** `daneiel` em todo repo do Brabo; nunca citar outra conta aqui.
 
