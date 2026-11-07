@@ -4,13 +4,16 @@
 set -euo pipefail
 
 # Lista ÚNICA dos repositórios. Nova irmã da pasta-mãe entra aqui e só aqui.
-REPOS="brabo brabo-api brabo-engine brabo-web brabo-runner brabo-broker brabo-contracts brabo-ci brabo-infra brabo-qa brabo-old"
+# "pasta=remoto" clona o remoto numa pasta de outro nome (brabo-old é o brabo-legacy).
+REPOS="brabo brabo-api brabo-engine brabo-web brabo-runner brabo-broker brabo-contracts brabo-ci brabo-infra brabo-qa brabo-old=brabo-legacy"
 
 # BRABO_BASE_URL existe para o teste apontar para repositórios file:// locais.
 BASE_URL="${BRABO_BASE_URL:-https://github.com/viralabs-dev}"
 PASTA="$(cd "$(dirname "$0")" && pwd)"
 
-for repo in $REPOS; do
+for entrada in $REPOS; do
+  repo="${entrada%%=*}"
+  remoto="${entrada#*=}"
   destino="$PASTA/$repo"
   if [ -e "$destino/.git" ]; then
     echo "fetch  $repo"
@@ -20,7 +23,7 @@ for repo in $REPOS; do
     exit 1
   else
     echo "clone  $repo"
-    git clone --quiet "$BASE_URL/$repo.git" "$destino" || { echo "brabo-workspace: falhou no clone de $repo" >&2; exit 1; }
+    git clone --quiet "$BASE_URL/$remoto.git" "$destino" || { echo "brabo-workspace: falhou no clone de $repo" >&2; exit 1; }
   fi
 done
 

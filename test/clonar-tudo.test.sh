@@ -8,7 +8,10 @@ trap 'rm -rf "$T"' EXIT
 export GIT_AUTHOR_NAME=teste GIT_AUTHOR_EMAIL=teste@teste GIT_COMMITTER_NAME=teste GIT_COMMITTER_EMAIL=teste@teste
 
 # A lista de repos vem do próprio script: uma fonte só.
-REPOS="$(sed -n 's/^REPOS="\(.*\)"$/\1/p' "$ROOT/clonar-tudo.sh")"
+ENTRADAS="$(sed -n 's/^REPOS="\(.*\)"$/\1/p' "$ROOT/clonar-tudo.sh")"
+# Entrada "pasta=remoto": o remoto falso leva o nome do remoto, a pasta o da pasta.
+REPOS=""; REMOTOS=""
+for e in $ENTRADAS; do REPOS="$REPOS ${e%%=*}"; REMOTOS="$REMOTOS ${e#*=}"; done
 falhas=0
 ok() { echo "ok - $1"; }
 nok() { echo "FALHOU - $1" >&2; falhas=$((falhas + 1)); }
@@ -19,7 +22,7 @@ git init -q "$semente"
 echo semente > "$semente/README.md"
 git -C "$semente" add README.md
 git -C "$semente" commit -q -m "semente"
-for r in $REPOS; do
+for r in $REMOTOS; do
   git init -q --bare "$T/remotes/$r.git"
   git --git-dir="$T/remotes/$r.git" symbolic-ref HEAD refs/heads/main
   git -C "$semente" push -q "$T/remotes/$r.git" HEAD:refs/heads/main
@@ -55,6 +58,10 @@ mkdir "$T/p4/brabo-api"
 echo lixo > "$T/p4/brabo-api/arquivo"
 st=0; roda "$T/p4" >"$T/log4" 2>&1 || st=$?
 if [ "$st" -ne 0 ] && grep -q "brabo-api" "$T/log4" && [ -f "$T/p4/brabo-api/arquivo" ]; then ok "pasta que não é clone: falha nomeada e nada apagado"; else nok "pasta que não é clone foi mexida ou a falha não foi nomeada"; fi
+
+# 5. brabo-old vem do remoto brabo-legacy.
+case " $ENTRADAS " in *" brabo-old=brabo-legacy "*) ok "brabo-old mapeia para brabo-legacy" ;; *) nok "brabo-old não mapeia para brabo-legacy" ;; esac
+if [ ! -e "$T/remotes/brabo-old.git" ]; then ok "não existe remoto brabo-old (o 404 de antes)"; else nok "remoto brabo-old existe no teste"; fi
 
 echo "falhas: $falhas"
 [ "$falhas" -eq 0 ]
