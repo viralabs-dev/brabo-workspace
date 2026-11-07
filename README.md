@@ -57,6 +57,10 @@ O teste roda o script contra repositórios `file://` falsos numa pasta temporár
 
 Este repositório guarda só as regras da pasta-mãe, em `CLAUDE.md`. O detalhe de cada repo fica no próprio repo (a AT-708 cuida disso).
 
+## Apoie
+
+Se o projeto te ajuda, você pode [pagar um café no Ko-fi](https://ko-fi.com/daneiel).
+
 ## Licença
 
 MIT, ver `LICENSE`.
