@@ -1,5 +1,7 @@
 # brabo-workspace
 
+[![CI dev](https://img.shields.io/github/actions/workflow/status/viralabs-dev/brabo-workspace/ci.yml?branch=dev&label=CI%20dev&style=flat-square)](https://github.com/viralabs-dev/brabo-workspace/actions/workflows/ci.yml?query=branch%3Adev) [![CI main](https://img.shields.io/github/actions/workflow/status/viralabs-dev/brabo-workspace/ci.yml?branch=main&label=CI%20main&style=flat-square)](https://github.com/viralabs-dev/brabo-workspace/actions/workflows/ci.yml?query=branch%3Amain) [![dev](https://img.shields.io/github/v/tag/viralabs-dev/brabo-workspace?include_prereleases&filter=*-dev*&label=dev&color=informational&style=flat-square)](https://github.com/viralabs-dev/brabo-workspace/tags) [![Licença: MIT](https://img.shields.io/badge/licença-MIT-blue.svg?style=flat-square)](LICENSE) [![Documentação](https://img.shields.io/badge/docs-viralabs--dev.github.io/brabo-8A2BE2.svg?style=flat-square)](https://viralabs-dev.github.io/brabo/prd/) [![Apoie no Ko-fi](https://img.shields.io/badge/Ko--fi-me%20pague%20um%20caf%C3%A9-FF5E5B?logo=ko-fi&logoColor=white&style=flat-square)](https://ko-fi.com/daneiel)
+
 Pasta-mãe que reúne os repositórios `brabo-*` lado a lado, num lugar só, sem código de produto.
 
 ## Para que existe
