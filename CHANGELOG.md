@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- CI: o `ci.yml` chama o reutilizável `cadeia.yml` do `brabo-ci` (actionlint e pins, `ci_ref` obrigatório, AT-819) e perde o job `actionlint` copiado e o `.github/actionlint.yaml` (idêntico ao do brabo-ci). Repina `politica.yml` e `tag.yml` em `0a9eba8` (`v1.4.0-dev.5`, brabo-ci#39), e os `ci_ref` ganham o comentário de versão que faltava.
+
 - `clonar-tudo.sh`: a entrada `brabo-old` dava 404; `REPOS` aceita `pasta=remoto` e `brabo-old=brabo-legacy` clona o monorepo antigo de `viralabs-dev/brabo-legacy`, com teste (AT-783).
 
 - CI: repina os reutilizáveis do `brabo-ci` em `13f3697` (merge da ci#17, que inclui a ci#16): `ubuntu-26.04`, `client-id` no lugar de `app-id`, rótulo de família criado antes de aplicar, linha `Carimbo:` na tag e helper `vinculos` (AT-772, AT-773).
