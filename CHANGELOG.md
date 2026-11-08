@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- CI: repina todos os `uses:` e `ci_ref` do `brabo-ci` em `6390ef5` (`v1.4.0-dev.17`, ci#53), que aceita a prova `{arquivo, trecho}` do `mapa-dos-repos.ts`; o pin antigo dá `throw` no formato novo e o `mapa-alinhado` quebra.
 - Docs (AT-849 item 5): `CLAUDE.md` diz "Contrato entre repos só por versão publicada da TAG do `brabo-contracts`", em vez de "só por TAG", para bater com o consumo por versão do pacote.
 - Docs: o `README.md` segue o esqueleto de 8 seções do `README.modelo.md` do `brabo-ci` (AT-826): para que existe, onde se encaixa (bloco gerado do `repos.yml` do brabo), como é usado, como desenvolver, o que o CI garante, documentação, como replicar, apoie e licença. O detalhe do monorepo antigo e de como subir o dev desce para `docs/pasta-mae.md`.
 
