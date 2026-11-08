@@ -26,7 +26,7 @@ O histórico do monorepo antigo, arquivado ([`viralabs-dev/brabo-legacy`](https:
 - **Teste nunca no Postgres da instalação.** Use Postgres descartável (projeto compose `-p <nome>`); o dev é `brabo-dev` e a instalação é `brabo`, e um não toca o outro.
 - **Segredos nunca são impressos** (chave de LLM, token de git, `.env`), nem em log, PR ou relatório.
 - **Documentação em pt-BR.** Toda doc de repositório público (README, CONTRIBUTING, arquivos de comunidade, `docs/`, CHANGELOG) é escrita em pt-BR por padrão (decisão do dono de 06/11/2026, revertendo o ADR 0260). O site central é <https://viralabs-dev.github.io/brabo/prd/>.
-- **Documentação é parte do pronto.** Cada repo de código tem `docs/` própria, atualizada na mesma mudança, com `CHANGELOG.md` (Unreleased); o `brabo` agrega o site. Contrato entre repos só por TAG do `brabo-contracts`.
+- **Documentação é parte do pronto.** Cada repo de código tem `docs/` própria, atualizada na mesma mudança, com `CHANGELOG.md` (Unreleased); o `brabo` agrega o site. Contrato entre repos só por versão publicada da TAG do `brabo-contracts`.
 - **Contas GitHub.** `daneiel` em todo repo do Brabo; nunca citar outra conta aqui.
 
 ## Ao mexer aqui
