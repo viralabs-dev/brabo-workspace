@@ -1,0 +1,19 @@
+name: readme
+
+# Checks informativos do README (AT-826): o esqueleto de 8 seções e o bloco do mapa em dia com o repos.yml do brabo.
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  esqueleto:
+    uses: viralabs-dev/brabo-ci/.github/workflows/readme-esqueleto.yml@53200467cadc73c5c23b90545474d4948764932f  # v1.4.0
+    with:
+      ci_ref: 53200467cadc73c5c23b90545474d4948764932f  # v1.4.0
+
+  mapa:
+    uses: viralabs-dev/brabo-ci/.github/workflows/mapa-alinhado.yml@53200467cadc73c5c23b90545474d4948764932f  # v1.4.0
+    with:
+      ci_ref: 53200467cadc73c5c23b90545474d4948764932f  # v1.4.0
